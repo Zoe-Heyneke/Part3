@@ -7,6 +7,32 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TabControl Name="RecipePages">
+            <TabItem Header="Menu" Name="RecMenu">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Width="355">
+                        <TextBlock Text="Welcome to Zoe's Recipe Application!" FontSize="20" FontWeight="Bold" Margin="0 30 0 20"/>
+                    </StackPanel>
+                    <StackPanel Margin="20">
+                        <Button Content="Add Recipe" Width="200" Height="40" Click="RecAdd_Click"/>
+                    </StackPanel>
+                    <StackPanel Margin="20">
+                        <Button Content="View Recipe" Width="200" Height="40"  Click="RecView_Click"/>
+                    </StackPanel>
+                    <StackPanel Margin="20">
+                        <Button Content="Filter Recipe" Width="200" Height="40" Click="RecFilter_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Add Recipe" Name="RecAdd">
 
+            </TabItem>
+            <TabItem Header="View Recipe" Name="RecView">
+
+            </TabItem>
+            <TabItem Header="Filter Recipe" Name="RecFilter">
+
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
