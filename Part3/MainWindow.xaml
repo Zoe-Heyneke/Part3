@@ -17,18 +17,18 @@
                 </TabItem.Background>
                 <StackPanel Orientation="Vertical">
                     <StackPanel.Background>
-                        <ImageBrush/>
+                        <ImageBrush ImageSource="/menu_img.png"/>
                     </StackPanel.Background>
-                    <StackPanel Orientation="Horizontal" Width="450" Margin="180 40 0 0">
-                        <TextBlock Text="Welcome to Zoe's Recipe Application!" FontSize="24" FontWeight="Bold" Margin="0 0 0 20" Foreground="#FFB58F8F"/>
+                    <StackPanel Orientation="Horizontal" Width="800" Margin="0 40 0 0" Background="#FFCF8A85">
+                        <TextBlock Text="Welcome to Zoe's Recipe Application!" FontSize="30" FontWeight="Bold" Margin="170 0 0 20" Foreground="#FF0C0B0C"/>
                     </StackPanel>
-                    <StackPanel Margin="120 30 0 0">
+                    <StackPanel Margin="180 30 0 0">
                         <Button Content="Add Recipe" FontSize="18" Width="200" Height="40" Click="RecAdd_Click" BorderBrush="#FF094406" Background="#FFF9F7F7" FontWeight="Bold"/>
                     </StackPanel>
-                    <StackPanel Margin="120 30 0 0">
+                    <StackPanel Margin="180 30 0 0">
                         <Button Content="View Recipe" FontSize="18" Width="200" Height="40"  Click="RecView_Click" BorderBrush="#FF094406" Background="#FFF9F7F7" FontWeight="Bold"/>
                     </StackPanel>
-                    <StackPanel Margin="120 30 0 0">
+                    <StackPanel Margin="180 30 0 0">
                         <Button Content="Filter Recipe" FontSize="18" Width="200" Height="40" Click="RecFilter_Click" BorderBrush="#FF094406" Background="#FFF9F7F7" FontWeight="Bold"/>
                     </StackPanel>
                 </StackPanel>
@@ -41,7 +41,10 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <StackPanel>
-                    
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="/add_img.png"/>
+                    </StackPanel.Background>
+
                 </StackPanel>
             </TabItem>
             <TabItem Header="View Recipe" Name="RecView" BorderBrush="#FF060505" FontWeight="Bold" FontSize="14">
@@ -52,7 +55,10 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <StackPanel>
-                    
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="/view_img.png"/>
+                    </StackPanel.Background>
+
                 </StackPanel>
             </TabItem>
             <TabItem Header="Filter Recipe" Name="RecFilter" BorderBrush="#FF060505" FontWeight="Bold" FontSize="14">
@@ -63,7 +69,10 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <StackPanel>
-                    
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="/filter_img.png"/>
+                    </StackPanel.Background>
+
                 </StackPanel>
             </TabItem>
         </TabControl>

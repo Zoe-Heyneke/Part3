@@ -8,4 +8,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="add_img.png" />
+    <None Remove="filter_img.png" />
+    <None Remove="menu_img.png" />
+    <None Remove="view_img.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="add_img.png" />
+    <Resource Include="filter_img.png" />
+    <Resource Include="menu_img.png" />
+    <Resource Include="view_img.png" />
+  </ItemGroup>
+
 </Project>
