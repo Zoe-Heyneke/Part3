@@ -112,6 +112,9 @@
                     <StackPanel.Background>
                         <ImageBrush ImageSource="/view_img.png"/>
                     </StackPanel.Background>
+                    <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="#FFCF8A85">
+                        <TextBlock Text="View Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
+                    </StackPanel>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Filter Recipe" Name="RecFilter" BorderBrush="Black" FontWeight="Bold" FontSize="14">
@@ -125,7 +128,9 @@
                     <StackPanel.Background>
                         <ImageBrush ImageSource="/filter_img.png"/>
                     </StackPanel.Background>
-
+                    <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="#FFCF8A85">
+                        <TextBlock Text="Filter Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
+                    </StackPanel>
                 </StackPanel>
             </TabItem>
         </TabControl>
