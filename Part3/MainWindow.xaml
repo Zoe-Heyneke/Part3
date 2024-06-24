@@ -19,7 +19,7 @@
                     <StackPanel.Background>
                         <ImageBrush ImageSource="/menu_img.png"/>
                     </StackPanel.Background>
-                    <StackPanel Orientation="Horizontal" Width="800" Margin="0 40 0 0" Background="#FFCF8A85">
+                    <StackPanel Orientation="Horizontal" Width="800" Height="60" Margin="0 40 0 0" Background="#FFCF8A85">
                         <TextBlock Text="Welcome to Zoe's Recipe Application!" FontSize="30" FontWeight="Bold" Margin="170 0 0 20" Foreground="#FF0C0B0C"/>
                     </StackPanel>
                     <StackPanel Margin="180 30 0 0">
@@ -33,21 +33,75 @@
                     </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Add Recipe" Name="RecAdd" BorderBrush="#FF060505" FontWeight="Bold" FontSize="14">
+            <TabItem Header="Add Recipe" Name="RecAdd" BorderBrush="Black" FontWeight="Bold" FontSize="14">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#FFF0F0F0"/>
                         <GradientStop Color="#FFC4AADF" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <StackPanel>
+                <StackPanel Orientation="Vertical">
                     <StackPanel.Background>
                         <ImageBrush ImageSource="/add_img.png"/>
                     </StackPanel.Background>
-
+                    <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 10 380 0" Background="#FFCF8A85">
+                        <TextBlock Text="Add Recipe:" FontSize="30" FontWeight="Bold" Margin="20 0 0 20" Foreground="Black"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="340 -60 0 0">
+                        <Label Content="Recipe Name:" Width="120" HorizontalContentAlignment="Left" Foreground="White" FontSize="16"/>
+                        <TextBox x:Name="RecName" Width="155" Height="50"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                        <Label Content="Ingredient Name:" Width="140" HorizontalContentAlignment="Left" Foreground="White" FontSize="16"/>
+                        <TextBox x:Name="IngName" Width="160"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Label Content="Quantity:" Width="140" FontSize="16" HorizontalContentAlignment="Left" Foreground="White"/>
+                        <TextBox x:Name="IngQuantity" Width="160"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Label Content="Unit of Measurement:" FontSize="16" Width="180" Foreground="White"/>
+                        <ComboBox Width="120" SelectedIndex="0" FontSize="16" Name="SelUnit" >
+                            <ComboBoxItem>Select Unit</ComboBoxItem>
+                            <ComboBoxItem>Cup</ComboBoxItem>
+                            <ComboBoxItem>Tablespoon</ComboBoxItem>
+                            <ComboBoxItem>Teaspoon</ComboBoxItem>
+                            <ComboBoxItem>Gram</ComboBoxItem>
+                            <ComboBoxItem>Kilogram</ComboBoxItem>
+                            <ComboBoxItem>Litres</ComboBoxItem>
+                            <ComboBoxItem>Millimetres</ComboBoxItem>
+                            <ComboBoxItem>Other</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Label Content="Calories:" FontSize="16" Width="160" HorizontalContentAlignment="Left" Foreground="White"/>
+                        <TextBox x:Name="Calories" Width="140"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Label Content="Food Group:" FontSize="16" Width="135" Foreground="White"/>
+                        <ComboBox Width="165" FontSize="16" SelectedIndex="0" Name="SelFoodGroup" >
+                            <ComboBoxItem>Select Food Group</ComboBoxItem>
+                            <ComboBoxItem>Carbohydrates</ComboBoxItem>
+                            <ComboBoxItem>Vegetables and Fruits</ComboBoxItem>
+                            <ComboBoxItem>Protein</ComboBoxItem>
+                            <ComboBoxItem>Fats and Oils</ComboBoxItem>
+                            <ComboBoxItem>Dairy</ComboBoxItem>
+                            <ComboBoxItem>Water</ComboBoxItem>
+                            <ComboBoxItem>Other</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Width="400" Height="120" Margin="0 10 6 0" Background="CornflowerBlue">
+                        <TextBlock Text="Carbohydrates(fibre): Pap, Potatoes, Pasta, Bread" FontSize="12" FontWeight="Bold" Margin="40 0 0 20" Foreground="Black"/>
+                        <TextBlock Text="Vegetables and Fruits(vitamins): Carrots, Spinach and Apple, Orange" FontSize="12" FontWeight="Bold" Margin="-310 14 0 0" Foreground="Black"/>
+                        <TextBlock Text="Protein(building blocks): Chicken, Mince, Eggs, Beans" FontSize="12" FontWeight="Bold" Margin="-350 30 0 20" Foreground="Black"/>
+                        <TextBlock Text="Fats and Oils(fatty acids): Avocado, Olive Oil, Butter" FontSize="12" FontWeight="Bold" Margin="-345 45 0 20" Foreground="Black"/>
+                        <TextBlock Text="Dairy(calcium): Milk, Yoghurt" FontSize="12" FontWeight="Bold" Margin="-300 58 0 20" Foreground="Black"/>
+                        <TextBlock Text="Water(hydration): Water, Sugar Free Drinks like Tea or Coffee" FontSize="12" FontWeight="Bold" Margin="-360 70 0 20" Foreground="Black"/>
+                        <TextBlock Text="Other(unhealthy foods): Soft Drinks, Chips, Cookies, Candy" FontSize="12" FontWeight="Bold" Margin="-360 85 0 20" Foreground="Black"/>
+                    </StackPanel>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="View Recipe" Name="RecView" BorderBrush="#FF060505" FontWeight="Bold" FontSize="14">
+            <TabItem Header="View Recipe" Name="RecView" BorderBrush="Black" FontWeight="Bold" FontSize="14">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#FFF0F0F0"/>
@@ -58,10 +112,9 @@
                     <StackPanel.Background>
                         <ImageBrush ImageSource="/view_img.png"/>
                     </StackPanel.Background>
-
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Filter Recipe" Name="RecFilter" BorderBrush="#FF060505" FontWeight="Bold" FontSize="14">
+            <TabItem Header="Filter Recipe" Name="RecFilter" BorderBrush="Black" FontWeight="Bold" FontSize="14">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#FFF0F0F0"/>
