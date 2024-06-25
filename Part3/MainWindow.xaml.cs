@@ -45,7 +45,7 @@ namespace Part3
             RecipePages.SelectedIndex = 3;  
         }
 
-        private void BackToMenu_Click(object sender, RoutedEventArgs e)
+        private void BackMenu_Click(object sender, RoutedEventArgs e)
         {
             //when user clicks Back To Menu on other pages, allows Menu page to show because it is the first index (0)
             RecipePages.SelectedIndex = 0;  
@@ -102,7 +102,7 @@ namespace Part3
             if (SelFoodGroup.SelectedItem is ComboBoxItem selectedFoodGroup)
             {
                 //selected combobox food group gets value of combo and converts that value to the string value since the user is choosing from the combobox
-                IngredientUnit = selectedFoodGroup.Content.ToString();
+                IngredientFoodGroup = selectedFoodGroup.Content.ToString();
             }
 
             //error handling check for no empty fields
@@ -182,7 +182,7 @@ namespace Part3
             //show names underneath each other
             for (int i = 0; i < alphaRecipeNames.Count; i++)
             {
-                alphaRec.Content += $"({i + 1}) {alphaRecipeNames[i].RecName}";
+                alphaRec.Content += $"({i + 1}) {alphaRecipeNames[i].RecName}\n";
             }
         }
 
@@ -190,12 +190,15 @@ namespace Part3
         private void SelRecName_Click(object sender, RoutedEventArgs e)
         {
             string chosen = SelName.Text;
+            bool recipeNameSelected = false;
 
             ViewRecDetails.Content = string.Empty;
             foreach(var addedRecName in newRecipes)
             {
                 if(addedRecName.RecName == chosen)
                 {
+                    //if recipe name selected is found show respective details of that recipe name
+                    recipeNameSelected = true;
                     string startView = $"Recipe Name: {addedRecName.RecName}\n\n";
 
                     startView += "Ingredients:\n";
@@ -215,6 +218,11 @@ namespace Part3
                     ViewRecDetails.Content = startView;
                     break;
                 }
+            }
+            //if no recipe name selected is found in list then error message will show
+            if(!recipeNameSelected)
+            {
+                MessageBox.Show("The Recipe Name you entered does not exist. Please choose a recipe from the list.");
             }
         }
 
