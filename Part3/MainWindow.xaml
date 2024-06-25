@@ -101,14 +101,14 @@
                         <Button Content="(2) Add Ingredient" Click="AddIng_Click" Height="30" Background="DimGray" BorderBrush="Black"/>
                     </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Width="400" Height="120" Margin="0 -15 50 0" Background="CornflowerBlue">
-                        <TextBlock Text="Carbohydrates(fibre): Pap, Potatoes, Pasta, Bread" FontSize="12" FontWeight="Bold" Margin="40 0 0 20" Foreground="Black"/>
-                        <TextBlock Text="Vegetables and Fruits(vitamins): Carrots, Spinach and Apple, Orange" FontSize="12" FontWeight="Bold" Margin="-310 14 0 0" Foreground="Black"/>
-                        <TextBlock Text="Protein(building blocks): Chicken, Mince, Eggs, Beans" FontSize="12" FontWeight="Bold" Margin="-350 30 0 20" Foreground="Black"/>
-                        <TextBlock Text="Fats and Oils(fatty acids): Avocado, Olive Oil, Butter" FontSize="12" FontWeight="Bold" Margin="-345 45 0 20" Foreground="Black"/>
-                        <TextBlock Text="Dairy(calcium): Milk, Yoghurt" FontSize="12" FontWeight="Bold" Margin="-300 58 0 20" Foreground="Black"/>
-                        <TextBlock Text="Water(hydration): Water, Sugar Free Drinks like Tea or Coffee" FontSize="12" FontWeight="Bold" Margin="-360 70 0 20" Foreground="Black"/>
-                        <TextBlock Text="Other(unhealthy foods): Soft Drinks, Chips, Cookies, Candy" FontSize="12" FontWeight="Bold" Margin="-360 85 0 20" Foreground="Black"/>
+                    <StackPanel Orientation="Horizontal" Width="450" Height="130" Margin="0 -25 50 0" Background="CornflowerBlue">
+                        <TextBlock Text="Carbohydrates(fibre): Pap, Potatoes, Pasta, Bread" FontSize="13" FontWeight="Bold" Margin="40 0 0 20" Foreground="Black"/>
+                        <TextBlock Text="Vegetables and Fruits(vitamins): Carrots, Spinach and Apple, Orange" FontSize="13" FontWeight="Bold" Margin="-320 14 0 0" Foreground="Black"/>
+                        <TextBlock Text="Protein(building blocks): Chicken, Mince, Eggs, Beans" FontSize="13" FontWeight="Bold" Margin="-390 30 0 20" Foreground="Black"/>
+                        <TextBlock Text="Fats and Oils(fatty acids): Avocado, Olive Oil, Butter" FontSize="13" FontWeight="Bold" Margin="-385 45 0 20" Foreground="Black"/>
+                        <TextBlock Text="Dairy(calcium): Milk, Yoghurt" FontSize="13" FontWeight="Bold" Margin="-330 59 0 20" Foreground="Black"/>
+                        <TextBlock Text="Water(hydration): Water, Sugar Free Drinks like Tea or Coffee" FontSize="13" FontWeight="Bold" Margin="-390 74 0 20" Foreground="Black"/>
+                        <TextBlock Text="Other(unhealthy foods): Soft Drinks, Chips, Cookies, Candy" FontSize="13" FontWeight="Bold" Margin="-380 89 0 20" Foreground="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Width="150" Margin="630 -300 0 50" Height="250" VerticalAlignment="Center" HorizontalAlignment="Center">
                         <TextBlock Text="Calories: A calorie is a unit that measures the energy content of foods." HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="200"/>

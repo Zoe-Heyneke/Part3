@@ -143,7 +143,21 @@ namespace Part3
         //3) steps
         public void AddSteps_Click(object sender, EventArgs e)
         {
-
+            //declare steps
+            string stepsEntered = RecSteps.Text;
+            if (string.IsNullOrEmpty(stepsEntered))
+            {
+                MessageBox.Show("No steps entered. Please enter steps for the recipe");
+            }
+            else
+            {
+                //add entered steps to steps list to be added to the recipe list
+                addedRecipe.Steps.Add(stepsEntered);
+                //clear method to clear textblock
+                RecSteps.Clear();
+                //confirm user
+                MessageBox.Show("Recipe Steps added. You have successfully entered a Recipe! Feel free to enter another Recipe or go back to the Menu Page.");
+            }
         }
 
         //error handling reference for numbers
