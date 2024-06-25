@@ -67,7 +67,8 @@ namespace Part3
             else
             {
                 //now the user is adding a recipe by entering the name
-                addedRecipe = new RecipeIngredient.Recipe { RecName = RecipeName };
+                addedRecipe = new RecipeIngredient.Recipe 
+                { RecName = RecipeName };
                 //add this recipe name to the list of new recipes
                 newRecipes.Add(addedRecipe);
                 //confirm with user
@@ -138,6 +139,11 @@ namespace Part3
             //add entered values to recipe name added by user
             addedRecipe.Ingredients.Add(newRecipes);
             MessageBox.Show("Recipe Ingredients added. Now, continue adding the steps");
+
+            //clears the boxes for new adding
+            IngName.Clear();
+            IngQuantity.Clear();
+            IngCalories.Clear();    
         }
 
         //3) steps
@@ -158,6 +164,9 @@ namespace Part3
                 //confirm user
                 MessageBox.Show("Recipe Steps added. You have successfully entered a Recipe! Feel free to enter another Recipe or go back to the Menu Page.");
             }
+
+            //clears the boxes for new adding
+            RecSteps.Clear();
         }
 
         //view recipe buttons
@@ -167,17 +176,29 @@ namespace Part3
             //sort recipe names in alphabetical order from out the recipe list
             var alphaRecipeNames = newRecipes.OrderBy(z => z.RecName).ToList();
 
-            //show names in textblock underneath each other
-            for(int i = 0; i < alphaRecipeNames.Count; i++)
+            //will display list and refreshes it by first setting content to empty
+            alphaRec.Content = string.Empty;
+
+            //show names underneath each other
+            for (int i = 0; i < alphaRecipeNames.Count; i++)
             {
-                alphaRec.Text += $"({i + 1}) {alphaRecipeNames[i].RecName}";
+                alphaRec.Content += $"({i + 1}) {alphaRecipeNames[i].RecName}";
             }
         }
 
         //2) choose recipe that is in the list
         private void SelRecName_Click(object sender, RoutedEventArgs e)
         {
+            string chosen = SelName.Text;
 
+            ViewRecDetails.Content = string.Empty;
+            foreach(var addedRecName in newRecipes)
+            {
+                if(addedRecName.RecName == chosen)
+                {
+                    ViewRecDetails.Content += $"Recipe Name: {newRecipes.RecName}\n\nIngredients:\n {Ingredients.IngName} {} {} : {} calories and belongs to the food group {}\n\nSteps:\n{}";
+                }
+            }
         }
 
         //error handling reference for numbers
