@@ -58,7 +58,8 @@ namespace Part3
             //declare recipe name entered in the textbox by user as a string
             string RecipeName = RecName.Text;
             //error handling
-            if (RecipeName == "")
+            //if (RecipeName == "")
+            if(string.IsNullOrEmpty(RecipeName))
             {
                 MessageBox.Show("Empty value. Please enter a Recipe Name.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -70,9 +71,9 @@ namespace Part3
                 //add this recipe name to the list of new recipes
                 newRecipes.Add(addedRecipe);
                 //confirm with user
-                MessageBox.Show("Recipe Name created. Continue adding the ingredients and steps.");
+                MessageBox.Show("Recipe Name created. Continue adding the ingredients of this recipe.");
             }
-            /*
+            /* contains numbers
             if (ValidName(RecipeName))
             {
                 MessageBox.Show("Recipe Names cannot contain numbers", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -84,11 +85,70 @@ namespace Part3
         //2) ingredients
         private void AddIng_Click(object sender, RoutedEventArgs e)
         {
-             
+            //declare ingredients
+            string IngredientName = IngName.Text;
+            double IngredientQuantity = double.Parse(IngQuantity.Text);
+            //combobox unit
+            string IngredientUnit = string.Empty;   //no user input therefore empty string value
+            if(SelUnit.SelectedItem is ComboBoxItem selectedUnit)
+            {
+                //selected combobox unit gets value of combo and converts that value to the string value since the user is choosing from the combobox
+                IngredientUnit = selectedUnit.Content.ToString();
+            }
+            int IngredientCalories = int.Parse(IngCalories.Text);
+            //combobox food group
+            string IngredientFoodGroup = string.Empty;   //no user input therefore empty string value
+            if (SelFoodGroup.SelectedItem is ComboBoxItem selectedFoodGroup)
+            {
+                //selected combobox food group gets value of combo and converts that value to the string value since the user is choosing from the combobox
+                IngredientUnit = selectedFoodGroup.Content.ToString();
+            }
+
+            //error handling check for no empty fields
+            if (string.IsNullOrEmpty(IngredientName))
+            {
+                MessageBox.Show("Empty value. Please enter the ingredient name.");
+                return;
+            }
+
+      
+
+            if (string.IsNullOrEmpty(IngredientUnit))
+            {
+                MessageBox.Show("No chosen value. Please choose a Unit of Measurement.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(IngredientFoodGroup))
+            {
+                MessageBox.Show("No chosen value. Please choose a Food Group.");
+                return;
+            }
+
+            //store each ingredient entered by user in list of ingredients
+            RecipeIngredient.Ingredients newRecipes = new RecipeIngredient.Ingredients
+            {
+                IngName = IngredientName,
+                Quantity = IngredientQuantity,
+                Unit = IngredientUnit,
+                Calories = IngredientCalories,
+                FoodGroup = IngredientFoodGroup,
+            };
+
+            //add entered values to recipe name added by user
+            addedRecipe.Ingredients.Add(newRecipes);
+            MessageBox.Show("Recipe Ingredients added. Now, continue adding the steps");
+        }
+
+        //3) steps
+        public void AddSteps_Click(object sender, EventArgs e)
+        {
+
         }
 
         //error handling reference for numbers
-        private bool ValidName(string name)
+        /*
+            private bool ValidName(string name)
         {
             foreach (char c in name)
             {
@@ -99,5 +159,6 @@ namespace Part3
             }
             return true;
         }
+        */
     }
 }
