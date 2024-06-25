@@ -196,7 +196,24 @@ namespace Part3
             {
                 if(addedRecName.RecName == chosen)
                 {
-                    ViewRecDetails.Content += $"Recipe Name: {newRecipes.RecName}\n\nIngredients:\n {Ingredients.IngName} {} {} : {} calories and belongs to the food group {}\n\nSteps:\n{}";
+                    string startView = $"Recipe Name: {addedRecName.RecName}\n\n";
+
+                    startView += "Ingredients:\n";
+                    foreach(var ingredientViewing in addedRecName.Ingredients)
+                    {
+                        startView += $"{ingredientViewing.Unit} {ingredientViewing.Quantity} {ingredientViewing.IngName} " +
+                            $"which is equal to {ingredientViewing.Calories} " +
+                            $"and belongs to the food group of {ingredientViewing.FoodGroup}\n";
+                    }
+
+                    startView += "Steps:\n";
+                    for (int i = 0; i < addedRecName.Steps.Count; i++)
+                    {
+                        startView += $"{(i + 1)} {addedRecName.Steps[i]}\n";
+                    }
+
+                    ViewRecDetails.Content = startView;
+                    break;
                 }
             }
         }
