@@ -23,13 +23,13 @@
                         <TextBlock Text="Welcome to Zoe's Recipe Application!" FontSize="30" FontWeight="Bold" Margin="170 0 0 20" Foreground="#FF0C0B0C"/>
                     </StackPanel>
                     <StackPanel Margin="180 30 0 0">
-                        <Button Content="Add Recipe" FontSize="18" Width="200" Height="40" Click="RecAdd_Click" BorderBrush="#FF094406" Background="#FFF9F7F7" FontWeight="Bold"/>
+                        <Button Content="Add Recipe" FontSize="18" Width="200" Height="40" Click="RecAdd_Click" BorderBrush="DarkSeaGreen" BorderThickness="4" Background="#FFF9F7F7" FontWeight="Bold"/>
                     </StackPanel>
                     <StackPanel Margin="180 30 0 0">
-                        <Button Content="View Recipe" FontSize="18" Width="200" Height="40"  Click="RecView_Click" BorderBrush="#FF094406" Background="#FFF9F7F7" FontWeight="Bold"/>
+                        <Button Content="View Recipe" FontSize="18" Width="200" Height="40"  Click="RecView_Click" BorderBrush="DarkSeaGreen" BorderThickness="4" Background="#FFF9F7F7" FontWeight="Bold"/>
                     </StackPanel>
                     <StackPanel Margin="180 30 0 0">
-                        <Button Content="Filter Recipe" FontSize="18" Width="200" Height="40" Click="RecFilter_Click" BorderBrush="#FF094406" Background="#FFF9F7F7" FontWeight="Bold"/>
+                        <Button Content="Filter Recipe" FontSize="18" Width="200" Height="40" Click="RecFilter_Click" BorderBrush="DarkSeaGreen" BorderThickness="4" Background="#FFF9F7F7" FontWeight="Bold"/>
                     </StackPanel>
                 </StackPanel>
             </TabItem>
