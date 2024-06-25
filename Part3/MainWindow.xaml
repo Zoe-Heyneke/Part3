@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl Name="RecipePages">
-            <TabItem Header="Menu" Name="RecMenu" BorderBrush="#00000000" FontWeight="Bold" FontSize="14">
+            <TabItem Header="Menu" Name="RecMenu" BorderBrush="DarkSalmon" FontWeight="Bold" FontSize="14">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#FFF0F0F0"/>
@@ -19,8 +19,8 @@
                     <StackPanel.Background>
                         <ImageBrush ImageSource="/menu_img.png"/>
                     </StackPanel.Background>
-                    <StackPanel Orientation="Horizontal" Width="800" Height="60" Margin="0 40 0 0" Background="#FFCF8A85">
-                        <TextBlock Text="Welcome to Zoe's Recipe Application!" FontSize="30" FontWeight="Bold" Margin="170 0 0 20" Foreground="#FF0C0B0C"/>
+                    <StackPanel Orientation="Horizontal" Width="800" Height="60" Margin="0 40 0 0" Background="DarkSalmon">
+                        <TextBlock Text="Welcome to Zoe's Recipe Application!" FontSize="30" FontWeight="Bold" Margin="170 2 0 20" Foreground="#FF0C0B0C"/>
                     </StackPanel>
                     <StackPanel Margin="180 30 0 0">
                         <Button Content="Add Recipe" FontSize="18" Width="200" Height="40" Click="RecAdd_Click" BorderBrush="DarkSeaGreen" BorderThickness="4" Background="#FFF9F7F7" FontWeight="Bold"/>
@@ -44,7 +44,7 @@
                     <StackPanel.Background>
                         <ImageBrush ImageSource="/add_img.png"/>
                     </StackPanel.Background>
-                    <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 10 380 0" Background="#FFCF8A85">
+                    <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 10 380 0" Background="DarkSalmon">
                         <TextBlock Text="Add Recipe:" FontSize="30" FontWeight="Bold" Margin="20 0 0 20" Foreground="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="340 -60 0 0">
@@ -110,11 +110,11 @@
                         <TextBlock Text="Water(hydration): Water, Sugar Free Drinks like Tea or Coffee" FontSize="13" FontWeight="Bold" Margin="-390 74 0 20" Foreground="Black"/>
                         <TextBlock Text="Other(unhealthy foods): Soft Drinks, Chips, Cookies, Candy" FontSize="13" FontWeight="Bold" Margin="-380 89 0 20" Foreground="Black"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Width="150" Margin="630 -300 0 50" Height="250" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="Calories: A calorie is a unit that measures the energy content of foods." HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="200"/>
-                        <TextBlock Text="Calories and Quantities have a direct relationship (linear) : When the quantity increases the calories also increase and when the quantity decreases then the calories also decrease."/>
+                    <StackPanel Orientation="Vertical" Width="150" Margin="630 -360 0 50" Height="250" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Calories: A calorie is a unit that measures the energy content of foods." HorizontalAlignment="Center" Width="140" Height="80" TextWrapping="Wrap" Background="LightGoldenrodYellow"/>
+                        <TextBlock Text="Calories and Quantities have a direct relationship (linear) : When the quantity increases the calories also increase and when the quantity decreases then the calories also decrease." TextWrapping="Wrap" Background="Plum"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="40" Width="100" Margin="530 -82 0 0">
+                    <StackPanel Orientation="Horizontal" Height="40" Width="100" Margin="530 -90 0 0">
                         <Button Content="Back to Menu" Click="BackMenu_Click" Background="DarkOliveGreen" BorderBrush="Black"/>
                     </StackPanel>
                 </StackPanel>
@@ -130,15 +130,16 @@
                     <StackPanel.Background>
                         <ImageBrush ImageSource="/view_img.png"/>
                     </StackPanel.Background>
-                    <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="#FFCF8A85">
+                    <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="DarkSalmon">
                         <TextBlock Text="View Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical" Margin="0 10 550 0">
                         <Label Content="View current Recipes:" Background="CornflowerBlue" Width="170" FontSize="16"/>
+                        <TextBlock x:Name="alphaRec" TextWrapping="Wrap" Background="SandyBrown" Width="200" Height="100"/>
                         <Button Content="Display" Click="DisplayRec_Click" Background="DimGray" BorderBrush="Black" Width="100"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="0 0 0 0">
-                        <Label Content="Enter Recipe Name to view Recipe Details:" Width="340" HorizontalContentAlignment="Left" Foreground="Black" FontSize="16" Background="CornflowerBlue"/>
+                    <StackPanel Orientation="Vertical" Margin="0 10 550 0">
+                        <Label Content="Enter Recipe Name to view Recipe Details:" Width="4" HorizontalContentAlignment="Left" Foreground="Black" FontSize="16" Background="CornflowerBlue"/>
                         <TextBox x:Name="SelName" Width="155" Height="35"/>
                         <Button Content="Select" Click="SelRecName_Click" Background="DimGray" BorderBrush="Black" Width="100"/>
                     </StackPanel>
@@ -159,7 +160,7 @@
                     <StackPanel.Background>
                         <ImageBrush ImageSource="/filter_img.png"/>
                     </StackPanel.Background>
-                    <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="#FFCF8A85">
+                    <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="DarkSalmon">
                         <TextBlock Text="Filter Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
                     </StackPanel>
 
