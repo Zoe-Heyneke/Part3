@@ -161,7 +161,24 @@ namespace Part3
         }
 
         //view recipe buttons
+        //1) show recipe names in alphabetical order 
+        private void DisplayRec_Click(object sender, RoutedEventArgs e)
+        {
+            //sort recipe names in alphabetical order from out the recipe list
+            var alphaRecipeNames = newRecipes.OrderBy(z => z.RecName).ToList();
 
+            //show names in textblock underneath each other
+            for(int i = 0; i < alphaRecipeNames.Count; i++)
+            {
+                alphaRec.Text += $"({i + 1}) {alphaRecipeNames[i].RecName}";
+            }
+        }
+
+        //2) choose recipe that is in the list
+        private void SelRecName_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         //error handling reference for numbers
         /*
