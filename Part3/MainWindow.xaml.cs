@@ -52,7 +52,52 @@ namespace Part3
         }
 
         //add recipe buttons
+        //1) recipe name
+        private void RecName_Click(object sender, RoutedEventArgs e)
+        {
+            //declare recipe name entered in the textbox by user as a string
+            string RecipeName = RecName.Text;
+            //error handling
+            if (RecipeName == "")
+            {
+                MessageBox.Show("Empty value. Please enter a Recipe Name.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            else
+            {
+                //now the user is adding a recipe by entering the name
+                addedRecipe = new RecipeIngredient.Recipe { RecName = RecipeName };
+                //add this recipe name to the list of new recipes
+                newRecipes.Add(addedRecipe);
+                //confirm with user
+                MessageBox.Show("Recipe Name created. Continue adding the ingredients and steps.");
+            }
+            /*
+            if (ValidName(RecipeName))
+            {
+                MessageBox.Show("Recipe Names cannot contain numbers", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            */
+        }
 
+        //2) ingredients
+        private void AddIng_Click(object sender, RoutedEventArgs e)
+        {
+             
+        }
 
+        //error handling reference for numbers
+        private bool ValidName(string name)
+        {
+            foreach (char c in name)
+            {
+                if (c <= 30 && c >= 39)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
