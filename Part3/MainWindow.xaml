@@ -133,8 +133,12 @@
                     <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="#FFCF8A85">
                         <TextBlock Text="View Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="0 10 550 0">
-                        <Label Content="Enter Recipe Name:" Width="155" HorizontalContentAlignment="Left" Foreground="Black" FontSize="16"/>
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="View current Recipes:" Background="CornflowerBlue" Width="170" FontSize="16"/>
+                        <Button Content="Display" Click="DisplayRec_Click" Background="DimGray" BorderBrush="Black" Width="100"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0 0 0 0">
+                        <Label Content="Enter Recipe Name to view Recipe Details:" Width="340" HorizontalContentAlignment="Left" Foreground="Black" FontSize="16" Background="CornflowerBlue"/>
                         <TextBox x:Name="SelName" Width="155" Height="35"/>
                         <Button Content="Select" Click="SelRecName_Click" Background="DimGray" BorderBrush="Black" Width="100"/>
                     </StackPanel>
