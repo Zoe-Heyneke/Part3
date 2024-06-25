@@ -50,12 +50,12 @@
                     <StackPanel Orientation="Horizontal" Margin="340 -60 0 0">
                         <Label Content="Recipe Name:" Width="120" HorizontalContentAlignment="Left" Foreground="White" FontSize="16"/>
                         <TextBox x:Name="RecName" Width="155" Height="50"/>
-                        <Button Content="Enter" Click="RecName_Click" Background="DimGray" BorderBrush="Black"/>
+                        <Button Content="(1) Enter" Click="RecName_Click" Background="DimGray" BorderBrush="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Width="300" Margin="150 0 0 0">
                         <Label Content="Steps:" VerticalContentAlignment="Center" Width="80" FontSize="16"/>
                         <TextBox x:Name="RecSteps" Width="300" Height="140"/>
-                        <Button Content="Add Steps" Click="AddSteps_Click" Width="100" Background="DimGray" BorderBrush="Black"/>
+                        <Button Content="(3) Add Steps" Click="AddSteps_Click" Width="100" Height="28" Background="DimGray" BorderBrush="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="0 -200 0 0">
                     <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
@@ -97,8 +97,8 @@
                             <ComboBoxItem>Other</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="-640 5 0 0" Width="105">
-                        <Button Content="Add Ingredient" Click="AddIng_Click" Height="25" Background="DimGray" BorderBrush="Black"/>
+                    <StackPanel Orientation="Horizontal" Margin="-640 5 0 0" Width="130">
+                        <Button Content="(2) Add Ingredient" Click="AddIng_Click" Height="30" Background="DimGray" BorderBrush="Black"/>
                     </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Width="400" Height="120" Margin="0 -15 50 0" Background="CornflowerBlue">
