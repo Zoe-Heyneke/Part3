@@ -16,6 +16,10 @@ namespace Part3
     /// </summary>
     public partial class MainWindow : Window
     {
+        //use list that can only be accessed in the window to save/store all recipes created in this list as objects
+        private List<RecipeIngredient.Recipe> newRecipes = new List<RecipeIngredient.Recipe>();
+        //when user is adding a new recipe it will be stored to the recipe list
+        private RecipeIngredient.Recipe addedRecipe;
         public MainWindow()
         {
             InitializeComponent();
