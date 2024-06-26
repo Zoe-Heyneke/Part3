@@ -340,7 +340,7 @@ namespace Part3
                 //
                 if (!recipeMatched)
                 {
-                    FilFood.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
+                    FilFood.Content = $"No Recipe Name exists containing filtered Food Group";
                 }
             }
         }
@@ -390,7 +390,7 @@ namespace Part3
 
                 if (!recipeMatched)
                 {
-                    FilCal.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
+                    FilCal.Content = $"No Recipe Name exists containing filtered Calories";
                 }
             }
         }
