@@ -139,7 +139,7 @@ namespace Part3
 
             //add entered values to recipe name added by user
             addedRecipe.Ingredients.Add(newRecipes);
-            MessageBox.Show("Recipe Ingredients added. Now, continue adding the steps");
+            MessageBox.Show("Recipe Ingredients added. Now, continue adding the steps of this ingredient.");
 
             //clears the boxes for new adding
             IngName.Clear();
@@ -163,7 +163,7 @@ namespace Part3
                 //clear method to clear textblock
                 RecSteps.Clear();
                 //confirm user
-                MessageBox.Show("Recipe Steps added. You have successfully entered a Recipe! Feel free to enter another Recipe or go back to the Menu Page.");
+                MessageBox.Show("Recipe Steps added. You have successfully entered a Recipe! Feel free to enter more ingredients or another Recipe or go back to the Menu Page.");
             }
 
             //clears the boxes for new adding
@@ -206,7 +206,7 @@ namespace Part3
                     startView += "Ingredients:\n";
                     foreach(var ingredientViewing in addedRecName.Ingredients)
                     {
-                        startView += $"{ingredientViewing.Unit} {ingredientViewing.Quantity} {ingredientViewing.IngName} " +
+                        startView += $"{ingredientViewing.Quantity} {ingredientViewing.Unit} of {ingredientViewing.IngName} \n => " +
                             $"which is equal to {ingredientViewing.Calories} calories " +
                             $"and belongs to the food group of {ingredientViewing.FoodGroup}\n";
                     }
@@ -340,7 +340,7 @@ namespace Part3
                 //
                 if (!recipeMatched)
                 {
-                    FilIngName.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
+                    FilFood.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
                 }
             }
         }
@@ -390,7 +390,7 @@ namespace Part3
 
                 if (!recipeMatched)
                 {
-                    FilIngName.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
+                    FilCal.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
                 }
             }
         }
