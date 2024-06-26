@@ -210,10 +210,16 @@ namespace Part3
                     }
 
                     startView += "Steps:\n";
+                    foreach(var stepsViewing in addedRecName.Steps)
+                    {
+                        startView += $"{stepsViewing.Steps}";
+                    }
+                    /* numbered steps
                     for (int i = 0; i < addedRecName.Steps.Count; i++)
                     {
                         startView += $"{(i + 1)} {addedRecName.Steps[i]}\n";
                     }
+                    */
 
                     ViewRecDetails.Content = startView;
                     break;
@@ -227,6 +233,7 @@ namespace Part3
         }
 
         //filter recipe
+        //each criteria has their own list to save the filtering and show the user their corresponding recipe names
         //1) ingredient name
         private void FilterName_Click(object sender, RoutedEventArgs e)
         {
@@ -237,6 +244,9 @@ namespace Part3
                 MessageBox.Show("No Name entered. Please enter a name to continue filtering");
                 return;
             }
+
+            //clear label since no user input required
+            FilIngName.Content = string.Empty;
 
             //create a new list to store recipe names that matched with the user's ingredient
             List<string> ingredientNamesMatched = new List<string>();
@@ -251,14 +261,56 @@ namespace Part3
                     if(ing.IngName.Equals(filteredName))
                     {
                         ingredientNamesMatched.Add(lookRecipe.RecName);
-                        break;
+                        //show recipe names in label that matches filtering
+                        FilIngName.Content += $"{lookRecipe.RecName}";
+                    }
+                    else
+                    {
+                        FilIngName.Content += $"No Recipe Name exists containing filtered Ingredient Name given";
                     }
                 }
             }
+        }
 
-            //show recipe names that matches filtering
-            FilIngName.Content = string.Empty;
+        //2) food group
 
+
+        //3) calories
+        private void FilterCal_Click(object sender, RoutedEventArgs e)
+        {
+            string filteredCals = FilCalories.Text;
+
+            if (string.IsNullOrEmpty(FilCalories.Text))
+            {
+                MessageBox.Show("No amount of calories entered. Please enter an amount of calories to continue filtering");
+                return;
+            }
+
+            //clear label since no user input required
+            FilCal.Content = string.Empty;
+
+            //create a new list to store recipe calories that matched with the user's calorie number
+            List<string> caloriesMatched = new List<string>();
+
+            //look through each recipe that user entered to find calorie amount that matches
+            foreach (var lookRecipe in newRecipes)
+            {
+                //look through each ingredient from that recipe(lookRecipe)
+                foreach (var cals in lookRecipe.Ingredients)
+                {
+                    //if ingredient name entered by the user matches with the name in recipe, the recipe's name is added to the new list
+                    if (cals.Calories.Equals(filteredCals))
+                    {
+                        caloriesMatched.Add(lookRecipe.RecName);
+                        //show recipe names in label that matches amount of calores
+                        FilCal.Content += $"{lookRecipe.RecName}";
+                    }
+                    else
+                    {
+                        FilCal.Content += $"No Recipe Name exists containing filtered amount of Calories given";
+                    }
+                }
+            }
         }
 
         //error handling reference for numbers
