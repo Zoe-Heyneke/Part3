@@ -31,6 +31,11 @@
                     <StackPanel Margin="180 30 0 0">
                         <Button Content="Filter Recipe" FontSize="18" Width="200" Height="40" Click="RecFilter_Click" BorderBrush="DarkSeaGreen" BorderThickness="4" Background="#FFF9F7F7" FontWeight="Bold"/>
                     </StackPanel>
+                    <TextBlock Margin="450 20 270 0" VerticalAlignment="Center" FontSize="20" Background="White">
+                        <Hyperlink NavigateUri="https://github.com/Zoe-Heyneke/Part3" RequestNavigate="Hyperlink_RequestNavigate">
+                            GitHub
+                        </Hyperlink>
+                    </TextBlock>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Add Recipe" Name="RecAdd" BorderBrush="Black" FontWeight="Bold" FontSize="14">

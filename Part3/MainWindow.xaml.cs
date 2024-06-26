@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;   //link
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -6,7 +7,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
+using System.Windows.Navigation;    //link
 using System.Windows.Shapes;
 
 namespace Part3
@@ -354,6 +355,13 @@ namespace Part3
                     }
                 }
             }
+        }
+
+        //link to github
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
 
         //error handling reference for numbers
