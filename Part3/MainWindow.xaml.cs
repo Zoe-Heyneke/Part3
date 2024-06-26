@@ -206,7 +206,7 @@ namespace Part3
                     foreach(var ingredientViewing in addedRecName.Ingredients)
                     {
                         startView += $"{ingredientViewing.Unit} {ingredientViewing.Quantity} {ingredientViewing.IngName} " +
-                            $"which is equal to {ingredientViewing.Calories} calories" +
+                            $"which is equal to {ingredientViewing.Calories} calories " +
                             $"and belongs to the food group of {ingredientViewing.FoodGroup}\n";
                     }
 
