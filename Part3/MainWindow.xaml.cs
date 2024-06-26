@@ -275,7 +275,7 @@ namespace Part3
         }
 
         //2) food group
-        private void Combo(object sender, RoutedEventArgs e)
+        private void FilterForFood_Click(object sender, RoutedEventArgs e)
         {
             string IngredientFoodGroup = string.Empty;   //no user input therefore empty string value
             if (FilFoodGroup.SelectedItem is ComboBoxItem foodGroupFiltered)
