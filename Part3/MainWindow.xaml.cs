@@ -167,6 +167,7 @@ namespace Part3
 
             //clears the boxes for new adding
             RecSteps.Clear();
+            IngName.Clear();
         }
 
         //view recipe buttons
@@ -210,7 +211,7 @@ namespace Part3
                     }
 
                     //find steps in recipe therefore calling var name because that contains the steps
-                    startView += "Steps:\n";
+                    startView += "\nSteps:\n";
                     foreach(var stepsViewing in addedRecName.Steps)
                     {
                         startView += $"{stepsViewing}";
