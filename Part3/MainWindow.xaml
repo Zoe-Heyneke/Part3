@@ -133,8 +133,8 @@
                     <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="DarkSalmon">
                         <TextBlock Text="View Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Width="500" Height="100" Margin="200 -75 0 0" Background="Wheat">
-                        <TextBlock Text="Your Recipes will display in Alphabetical Order once you press (1). Next, enter the Name of the Recipe you wish to View and press (2). (3) is where your Recipe's Details (Name, Ingredients, Steps) will show according to your Selected Name." TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                    <StackPanel Orientation="Vertical" Width="500" Height="110" Margin="200 -75 0 0" Background="Wheat">
+                        <TextBlock Text="Your Recipes will display in Alphabetical Order once you press (1). Next, enter the Name of the Recipe you wish to View and press (2). (3) is where your Recipe's Details being Name, Ingredients: (Quantity, Unit of Measurement, Name, Calories, Food Group), Steps) will show according to your Selected Name." TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="-20 -10 540 0" Width="280">
                         <Label Content="Current Recipes in Order:" Background="LightBlue" BorderBrush="Black" BorderThickness="2" Width="210" FontSize="16"/>
@@ -150,7 +150,7 @@
                         <Label Content="(3) Recipe Details:" Width="150" Height="40"  Background="SandyBrown" FontSize="16" BorderBrush="Black" BorderThickness="2"/>
                         <Label x:Name="ViewRecDetails" Content="" Width="290" Height="180" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="40" Width="100" Margin="670 -25 0 0">
+                    <StackPanel Orientation="Horizontal" Height="40" Width="100" Margin="670 -40 0 0">
                         <Button Content="Back to Menu" Click="BackMenu_Click" Background="DarkOliveGreen" BorderBrush="Black"/>
                     </StackPanel>
                 </StackPanel>
@@ -170,31 +170,52 @@
                         <TextBlock Text="Filter Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Width="420" Height="65" Margin="190 -70 0 0" Background="Wheat">
-                        <TextBlock Text="Here you can filter your Recipes to find what you are looking for based on the following criteria: Ingredient Name, Food Group, and Max Calories." TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="Here you can filter your Recipes to find Recipe Name based on the following criteria: Ingredient Name, Food Group, and Max Calories." TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Enter the name of an ingredient"/>
-                            <TextBox x:Name="FilName"/>
-                            <Button Content="Filter"/>
-                        </StackPanel>
-                        <TextBlock Text="Filtered Ingredients"/>
+                    <StackPanel Orientation="Vertical" Width="150" Height="280" Margin="-550 10 0 -310" Background="CadetBlue">
+                        <TextBlock Text="Note after Filtering: Since you now know what the Recipe Name is based on filtering, you can now press the View button below to navigate back to the View Recipe Page and enter that Recipe Name in (2)." TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                        <Button Content="View" Click="RecView_Click" FontSize="15" FontWeight="Bold"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Height="105" Margin="250 5 0 0">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Enter the name of an ingredient"/>
-                            <TextBox x:Name="FilF"/>
-                            <Button Content="Filter"/>
+                            <TextBlock Text="Enter the Name of an Ingredient:" FontSize="16" Height="30" Background="Orchid"/>
+                            <TextBox x:Name="FilName" Width="130" Height="30" BorderBrush="Black" BorderThickness="2"/>
+                            <Button Content="Filter" Click="FilterName_Click" FontSize="16" Height="30" Width="50"/>
                         </StackPanel>
-                        <TextBlock Text="Filtered Ingredients"/>
+                        <StackPanel Orientation="Vertical" Margin="38 0 0 0">
+                            <Label Content="Filtered Recipes by Ingredient Name" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
+                            <Label x:Name="FilIngName" Content="" Height="70" Width="200" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
+                        </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal"  Height="105" Margin="280 5 0 0">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Enter the name of an ingredient"/>
-                            <TextBox x:Name="FilC"/>
-                            <Button Content="Filter"/>
+                            <Label Content="Choose a Food Group:" FontSize="16" Width="185" Background="Orchid"/>
+                            <ComboBox Width="80" FontSize="16" SelectedIndex="0" Name="FilFoodGroup" BorderBrush="Black" BorderThickness="2">
+                                <ComboBoxItem>Filter</ComboBoxItem>
+                                <ComboBoxItem>Carbohydrates</ComboBoxItem>
+                                <ComboBoxItem>Vegetables and Fruits</ComboBoxItem>
+                                <ComboBoxItem>Protein</ComboBoxItem>
+                                <ComboBoxItem>Fats and Oils</ComboBoxItem>
+                                <ComboBoxItem>Dairy</ComboBoxItem>
+                                <ComboBoxItem>Water</ComboBoxItem>
+                                <ComboBoxItem>Other</ComboBoxItem>
+                            </ComboBox>
                         </StackPanel>
-                        <TextBlock Text="Filtered Ingredients"/>
+                        <StackPanel Orientation="Vertical" Margin="85 0 0 0">
+                            <Label Content="Filtered Recipes by Food Group" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
+                            <Label x:Name="FilFood" Content="" Height="70" Width="200" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="110" Margin="260 5 0 0">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Enter Max Number of Calories:" Height="30" FontSize="16" Background="Orchid"/>
+                            <TextBox x:Name="FilCalories" Width="130" Height="30" BorderBrush="Black" BorderThickness="2"/>
+                            <Button Content="Filter" Click="FilterCal_Click" FontSize="16" Height="30" Width="50"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="55 0 0 0">
+                            <Label Content="Filtered Recipes by Max Calories" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
+                            <Label x:Name="FilCal" Content="" Height="70" Width="200" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
+                        </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Height="40" Width="100" Margin="680 270 0 0">
                         <Button Content="Back to Menu" Click="BackMenu_Click" Background="DarkOliveGreen" BorderBrush="Black"/>

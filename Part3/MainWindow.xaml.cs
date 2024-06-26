@@ -226,6 +226,41 @@ namespace Part3
             }
         }
 
+        //filter recipe
+        //1) ingredient name
+        private void FilterName_Click(object sender, RoutedEventArgs e)
+        {
+            string filteredName = FilName.Text;
+
+            if(string.IsNullOrEmpty(FilName.Text))
+            {
+                MessageBox.Show("No Name entered. Please enter a name to continue filtering");
+                return;
+            }
+
+            //create a new list to store recipe names that matched with the user's ingredient
+            List<string> ingredientNamesMatched = new List<string>();
+
+            //look through each recipe that user entered to find ingredient that matches
+            foreach(var lookRecipe in newRecipes)
+            {
+                //look through each ingredient from that recipe(lookRecipe)
+                foreach(var ing in lookRecipe.Ingredients)
+                {
+                    //if ingredient name entered by the user matches with the name in recipe, the recipe's name is added to the new list
+                    if(ing.IngName.Equals(filteredName))
+                    {
+                        ingredientNamesMatched.Add(lookRecipe.RecName);
+                        break;
+                    }
+                }
+            }
+
+            //show recipe names that matches filtering
+            FilIngName.Content = string.Empty;
+
+        }
+
         //error handling reference for numbers
         /*
             private bool ValidName(string name)
