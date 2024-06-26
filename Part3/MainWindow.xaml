@@ -166,7 +166,30 @@
                     <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="DarkSalmon">
                         <TextBlock Text="Filter Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
                     </StackPanel>
-
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Enter the name of an ingredient"/>
+                            <TextBox x:Name="FilName"/>
+                            <Button Content="Filter"/>
+                        </StackPanel>
+                        <TextBlock Text="Filtered Ingredients"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Enter the name of an ingredient"/>
+                            <TextBox x:Name="FilF"/>
+                            <Button Content="Filter"/>
+                        </StackPanel>
+                        <TextBlock Text="Filtered Ingredients"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Enter the name of an ingredient"/>
+                            <TextBox x:Name="FilC"/>
+                            <Button Content="Filter"/>
+                        </StackPanel>
+                        <TextBlock Text="Filtered Ingredients"/>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal" Height="40" Width="100" Margin="680 270 0 0">
                         <Button Content="Back to Menu" Click="BackMenu_Click" Background="DarkOliveGreen" BorderBrush="Black"/>
                     </StackPanel>
