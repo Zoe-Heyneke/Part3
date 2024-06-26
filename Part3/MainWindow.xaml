@@ -151,9 +151,9 @@
                         <TextBox x:Name="SelName" Width="155" Height="35" Background="SandyBrown"/>
                         <Button Content="(2) Select" Click="SelRecName_Click" Background="DimGray" BorderBrush="Black" Width="100" Height="25"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="200 -230 10 0">
+                    <StackPanel Orientation="Vertical" Margin="170 -230 10 0">
                         <Label Content="(3) Recipe Details:" Width="150" Height="40"  Background="SandyBrown" FontSize="16" BorderBrush="Black" BorderThickness="2"/>
-                        <Label x:Name="ViewRecDetails" Content="" Width="355" Height="190" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2"/>
+                        <Label x:Name="ViewRecDetails" Content="" Width="390" Height="170" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Height="40" Width="100" Margin="670 -40 0 0">
                         <Button Content="Back to Menu" Click="BackMenu_Click" Background="DarkOliveGreen" BorderBrush="Black"/>
@@ -192,7 +192,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Margin="38 0 0 0">
                             <Label Content="Filtered Recipes by Ingredient Name" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
-                            <Label x:Name="FilIngName" Content="" Height="70" Width="200" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
+                            <Label x:Name="FilIngName" Content="" Height="70" Width="250" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"  Height="105" Margin="100 2 0 0">
@@ -210,9 +210,9 @@
                             </ComboBox>
                             <Button Content="Filter" Click="FilterForFood_Click" FontSize="16" Height="30" Width="50" Background="LightGray"/>
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="85 0 0 0">
+                        <StackPanel Orientation="Vertical" Margin="75 0 0 0">
                             <Label Content="Filtered Recipes by Food Group" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
-                            <Label x:Name="FilFood" Content="" Height="70" Width="200" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
+                            <Label x:Name="FilFood" Content="" Height="70" Width="250" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Height="110" Margin="100 2 0 0">
@@ -221,9 +221,9 @@
                             <TextBox x:Name="FilCalories" Width="130" Height="30" BorderBrush="Black" BorderThickness="2"/>
                             <Button Content="Filter" Click="FilterCal_Click" Background="LightGray" FontSize="16" Height="30" Width="50"/>
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="40 0 0 0">
+                        <StackPanel Orientation="Vertical" Margin="25 0 0 0">
                             <Label Content="Filtered Recipes by Max Calories" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
-                            <Label x:Name="FilCal" Content="" Height="70" Width="200" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
+                            <Label x:Name="FilCal" Content="" Height="70" Width="250" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

@@ -213,16 +213,17 @@ namespace Part3
 
                     //find steps in recipe therefore calling var name because that contains the steps
                     startView += "\nSteps:\n";
+                    /*
                     foreach(var stepsViewing in addedRecName.Steps)
                     {
                         startView += $"{stepsViewing}";
                     }
-                    /* numbered steps
+                    */
+                    //numbered steps
                     for (int i = 0; i < addedRecName.Steps.Count; i++)
                     {
                         startView += $"{(i + 1)} {addedRecName.Steps[i]}\n";
                     }
-                    */
 
                     //show the recipe details in the label by using the startView variable as this enables the print out of details
                     ViewRecDetails.Content = startView;
@@ -305,11 +306,14 @@ namespace Part3
                 return;
             }
 
+            //if recipes match
+            bool recipeMatched = false;
+
             //clear label since no user input required
             FilFood.Content = string.Empty;
 
             //create a new list to store recipe calories that matched with the user's calorie number
-            List<string> foodGroupMatched = new List<string>();
+            //List<string> foodGroupMatched = new List<string>();
 
             //look through each recipe that user entered to find calorie amount that matches
             foreach (var lookRecipe in newRecipes)
@@ -320,14 +324,23 @@ namespace Part3
                     //if ingredient name entered by the user matches with the name in recipe, the recipe's name is added to the new list
                     if (foogr.FoodGroup.Equals(IngredientFoodGroup))
                     {
-                        foodGroupMatched.Add(lookRecipe.RecName);
+                        //foodGroupMatched.Add(lookRecipe.RecName);
+                        //true
+                        recipeMatched = true;
                         //show recipe names in label that matches amount of calores
                         FilFood.Content += $"{lookRecipe.RecName}";
                     }
+                    /*
                     else
                     {
                         FilFood.Content += $"No Recipe Name exists containing filtered Food Group chosen";
                     }
+                    */
+                }
+                //
+                if (!recipeMatched)
+                {
+                    FilIngName.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
                 }
             }
         }
@@ -343,11 +356,14 @@ namespace Part3
                 return;
             }
 
+            //if recipes match
+            bool recipeMatched = false;
+
             //clear label since no user input required
             FilCal.Content = string.Empty;
 
             //create a new list to store recipe calories that matched with the user's calorie number
-            List<string> caloriesMatched = new List<string>();
+            //List<string> caloriesMatched = new List<string>();
 
             //look through each recipe that user entered to find calorie amount that matches
             foreach (var lookRecipe in newRecipes)
@@ -358,14 +374,23 @@ namespace Part3
                     //if ingredient name entered by the user matches with the name in recipe, the recipe's name is added to the new list
                     if (cals.Calories.Equals(filteredCals))
                     {
-                        caloriesMatched.Add(lookRecipe.RecName);
+                        //caloriesMatched.Add(lookRecipe.RecName);
+                        //true
+                        recipeMatched = true;
                         //show recipe names in label that matches amount of calores
                         FilCal.Content += $"{lookRecipe.RecName}";
                     }
+                    /*
                     else
                     {
                         FilCal.Content += $"No Recipe Name exists containing filtered amount of Calories given";
                     }
+                    */
+                }
+
+                if (!recipeMatched)
+                {
+                    FilIngName.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
                 }
             }
         }
