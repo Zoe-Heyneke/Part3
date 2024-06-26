@@ -133,21 +133,24 @@
                     <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="DarkSalmon">
                         <TextBlock Text="View Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="0 10 550 0">
-                        <Label Content="View current Recipes:" Background="LightBlue" BorderBrush="Black" BorderThickness="2" Width="170" FontSize="16"/>
-                        <Label x:Name="alphaRec" Content=""  Background="SandyBrown" Width="200" Height="110"/>
-                        <Button Content="Display" Click="DisplayRec_Click" Background="DimGray" BorderBrush="Black" Width="100" Height="25"/>
+                    <StackPanel Orientation="Vertical" Width="500" Height="100" Margin="200 -75 0 0" Background="Wheat">
+                        <TextBlock Text="Your Recipes will display in Alphabetical Order once you press (1). Next, enter the Name of the Recipe you wish to View and press (2). (3) is where your Recipe's Details (Name, Ingredients, Steps) will show according to your Selected Name." TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="0 10 550 0">
-                        <Label Content="Enter Recipe Name to View:" Foreground="Black" Width="220" BorderBrush="Black" BorderThickness="2" FontSize="16" Background="LightBlue"/>
-                        <TextBox x:Name="SelName" Width="155" Height="35"/>
-                        <Button Content="Select" Click="SelRecName_Click" Background="DimGray" BorderBrush="Black" Width="100" Height="25"/>
+                    <StackPanel Orientation="Vertical" Margin="-20 -10 540 0" Width="280">
+                        <Label Content="Current Recipes in Order:" Background="LightBlue" BorderBrush="Black" BorderThickness="2" Width="210" FontSize="16"/>
+                        <Label x:Name="alphaRec" Content=""  Background="SandyBrown" Width="190" Height="110"/>
+                        <Button Content="(1) Display" Click="DisplayRec_Click" Background="DimGray" BorderBrush="Black" Width="100" Height="25"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="350 -350 10 0">
-                        <Label Content="Recipe Details:" Width="120" Height="40"  Background="SandyBrown" FontSize="16" BorderBrush="Black" BorderThickness="2"/>
-                        <Label x:Name="ViewRecDetails" Content="" Width="250" Height="250" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2"/>
+                    <StackPanel Orientation="Vertical" Margin="0 20 500 0" Width="290">
+                        <Label Content="Enter Recipe Name to View Details:" Foreground="Black" Width="280" BorderBrush="Black" BorderThickness="2" FontSize="16" Background="LightBlue"/>
+                        <TextBox x:Name="SelName" Width="155" Height="35" Background="SandyBrown"/>
+                        <Button Content="(2) Select" Click="SelRecName_Click" Background="DimGray" BorderBrush="Black" Width="100" Height="25"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="40" Width="100" Margin="670 -15 0 0">
+                    <StackPanel Orientation="Vertical" Margin="200 -240 10 0">
+                        <Label Content="(3) Recipe Details:" Width="150" Height="40"  Background="SandyBrown" FontSize="16" BorderBrush="Black" BorderThickness="2"/>
+                        <Label x:Name="ViewRecDetails" Content="" Width="290" Height="180" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="40" Width="100" Margin="670 -25 0 0">
                         <Button Content="Back to Menu" Click="BackMenu_Click" Background="DarkOliveGreen" BorderBrush="Black"/>
                     </StackPanel>
                 </StackPanel>
@@ -165,6 +168,9 @@
                     </StackPanel.Background>
                     <StackPanel Orientation="Horizontal" Width="200" Height="60" Margin="0 20 550 0" Background="DarkSalmon">
                         <TextBlock Text="Filter Recipe:" FontSize="30" FontWeight="Bold" Margin="10 0 0 20" Foreground="Black"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="420" Height="65" Margin="190 -70 0 0" Background="Wheat">
+                        <TextBlock Text="Here you can filter your Recipes to find what you are looking for based on the following criteria: Ingredient Name, Food Group, and Max Calories." TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Orientation="Vertical">
