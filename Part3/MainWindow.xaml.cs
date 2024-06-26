@@ -249,11 +249,14 @@ namespace Part3
                 return;
             }
 
+            //if recipes match
+            bool recipeMatched = false;
+
             //clear label since no user input required
             FilIngName.Content = string.Empty;
 
             //create a new list to store recipe names that matched with the user's ingredient
-            List<string> ingredientNamesMatched = new List<string>();
+            //List<string> ingredientNamesMatched = new List<string>();
 
             //look through each recipe that user entered to find ingredient that matches
             foreach(var lookRecipe in newRecipes)
@@ -264,14 +267,24 @@ namespace Part3
                     //if ingredient name entered by the user matches with the name in recipe, the recipe's name is added to the new list
                     if(ing.IngName.Equals(filteredName))
                     {
-                        ingredientNamesMatched.Add(lookRecipe.RecName);
+                        //ingredientNamesMatched.Add(lookRecipe.RecName);
+                        //true
+                        recipeMatched = true;
                         //show recipe names in label that matches filtering
                         FilIngName.Content += $"{lookRecipe.RecName}";
+                        break;
                     }
+                    /*
                     else
                     {
                         FilIngName.Content += $"No Recipe Name exists containing filtered Ingredient Name given";
                     }
+                    */
+                }
+
+                if(!recipeMatched)
+                {
+                    FilIngName.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
                 }
             }
         }
