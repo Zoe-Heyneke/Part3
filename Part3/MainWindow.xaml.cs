@@ -209,10 +209,11 @@ namespace Part3
                             $"and belongs to the food group of {ingredientViewing.FoodGroup}\n";
                     }
 
+                    //find steps in recipe therefore calling var name because that contains the steps
                     startView += "Steps:\n";
                     foreach(var stepsViewing in addedRecName.Steps)
                     {
-                        startView += $"{stepsViewing.Steps}";
+                        startView += $"{stepsViewing}";
                     }
                     /* numbered steps
                     for (int i = 0; i < addedRecName.Steps.Count; i++)
@@ -221,6 +222,7 @@ namespace Part3
                     }
                     */
 
+                    //show the recipe details in the label by using the startView variable as this enables the print out of details
                     ViewRecDetails.Content = startView;
                     break;
                 }
@@ -273,7 +275,47 @@ namespace Part3
         }
 
         //2) food group
+        private void Combo(object sender, RoutedEventArgs e)
+        {
+            string IngredientFoodGroup = string.Empty;   //no user input therefore empty string value
+            if (FilFoodGroup.SelectedItem is ComboBoxItem foodGroupFiltered)
+            {
+                //selected combobox food group gets value of combo and converts that value to the string value since the user is choosing from the combobox
+                IngredientFoodGroup = foodGroupFiltered.Content.ToString();
+            }
 
+            if (string.IsNullOrEmpty(IngredientFoodGroup))
+            {
+                MessageBox.Show("No amount of calories entered. Please enter an amount of calories to continue filtering");
+                return;
+            }
+
+            //clear label since no user input required
+            FilFood.Content = string.Empty;
+
+            //create a new list to store recipe calories that matched with the user's calorie number
+            List<string> foodGroupMatched = new List<string>();
+
+            //look through each recipe that user entered to find calorie amount that matches
+            foreach (var lookRecipe in newRecipes)
+            {
+                //look through each ingredient from that recipe(lookRecipe)
+                foreach (var foogr in lookRecipe.Ingredients)
+                {
+                    //if ingredient name entered by the user matches with the name in recipe, the recipe's name is added to the new list
+                    if (foogr.FoodGroup.Equals(IngredientFoodGroup))
+                    {
+                        foodGroupMatched.Add(lookRecipe.RecName);
+                        //show recipe names in label that matches amount of calores
+                        FilFood.Content += $"{lookRecipe.RecName}";
+                    }
+                    else
+                    {
+                        FilFood.Content += $"No Recipe Name exists containing filtered Food Group chosen";
+                    }
+                }
+            }
+        }
 
         //3) calories
         private void FilterCal_Click(object sender, RoutedEventArgs e)

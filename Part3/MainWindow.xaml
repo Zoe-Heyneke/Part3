@@ -146,7 +146,7 @@
                         <TextBox x:Name="SelName" Width="155" Height="35" Background="SandyBrown"/>
                         <Button Content="(2) Select" Click="SelRecName_Click" Background="DimGray" BorderBrush="Black" Width="100" Height="25"/>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="200 -240 10 0">
+                    <StackPanel Orientation="Vertical" Margin="200 -230 10 0">
                         <Label Content="(3) Recipe Details:" Width="150" Height="40"  Background="SandyBrown" FontSize="16" BorderBrush="Black" BorderThickness="2"/>
                         <Label x:Name="ViewRecDetails" Content="" Width="290" Height="180" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2"/>
                     </StackPanel>
@@ -177,13 +177,13 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Width="150" Height="280" Margin="-550 10 0 -310" Background="CadetBlue">
                         <TextBlock Text="Note after Filtering: Since you now know what the Recipe Name is based on filtering, you can now press the View button below to navigate back to the View Recipe Page and enter that Recipe Name in (2)." TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
-                        <Button Content="View" Click="RecView_Click" FontSize="15" FontWeight="Bold"/>
+                        <Button Content="View" Click="RecView_Click" FontSize="15" Background="LightGray" FontWeight="Bold"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Height="105" Margin="250 5 0 0">
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="Enter the Name of an Ingredient:" FontSize="16" Height="30" Background="Orchid"/>
                             <TextBox x:Name="FilName" Width="130" Height="30" BorderBrush="Black" BorderThickness="2"/>
-                            <Button Content="Filter" Click="FilterName_Click" FontSize="16" Height="30" Width="50"/>
+                            <Button Content="Filter" Click="FilterName_Click" FontSize="16" Height="30" Width="50" Background="LightGray"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Margin="38 0 0 0">
                             <Label Content="Filtered Recipes by Ingredient Name" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
@@ -193,7 +193,7 @@
                     <StackPanel Orientation="Horizontal"  Height="105" Margin="280 5 0 0">
                         <StackPanel Orientation="Vertical">
                             <Label Content="Choose a Food Group:" FontSize="16" Width="185" Background="Orchid"/>
-                            <ComboBox Width="80" FontSize="16" SelectedIndex="0" Name="FilFoodGroup" BorderBrush="Black" BorderThickness="2">
+                            <ComboBox Width="80" FontSize="16" SelectedIndex="0" Name="FilFoodGroup" Background="DimGray" BorderBrush="Black" BorderThickness="2">
                                 <ComboBoxItem>Filter</ComboBoxItem>
                                 <ComboBoxItem>Carbohydrates</ComboBoxItem>
                                 <ComboBoxItem>Vegetables and Fruits</ComboBoxItem>
@@ -213,7 +213,7 @@
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="Enter Max Number of Calories:" Height="30" FontSize="16" Background="Orchid"/>
                             <TextBox x:Name="FilCalories" Width="130" Height="30" BorderBrush="Black" BorderThickness="2"/>
-                            <Button Content="Filter" Click="FilterCal_Click" FontSize="16" Height="30" Width="50"/>
+                            <Button Content="Filter" Click="FilterCal_Click" Background="LightGray" FontSize="16" Height="30" Width="50"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Margin="55 0 0 0">
                             <Label Content="Filtered Recipes by Max Calories" Background="RosyBrown" BorderBrush="Black" BorderThickness="2"/>
