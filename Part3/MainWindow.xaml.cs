@@ -69,7 +69,9 @@ namespace Part3
             {
                 //now the user is adding a recipe by entering the name
                 addedRecipe = new RecipeIngredient.Recipe 
-                { RecName = RecipeName };
+                { 
+                    RecName = RecipeName 
+                };
                 //add this recipe name to the list of new recipes
                 newRecipes.Add(addedRecipe);
                 //confirm with user
@@ -92,6 +94,7 @@ namespace Part3
             double IngredientQuantity = double.Parse(IngQuantity.Text);
             //combobox unit
             string IngredientUnit = string.Empty;   //no user input therefore empty string value
+            //is it a comboboxitem (true or false)
             if(SelUnit.SelectedItem is ComboBoxItem selectedUnit)
             {
                 //selected combobox unit gets value of combo and converts that value to the string value since the user is choosing from the combobox
@@ -113,7 +116,7 @@ namespace Part3
                 return;
             }
 
-      
+            //quantity and calories
 
             if (string.IsNullOrEmpty(IngredientUnit))
             {
@@ -127,7 +130,7 @@ namespace Part3
                 return;
             }
 
-            //store each ingredient entered by user in list of ingredients
+            //store each ingredient entered by user in list of ingredients with corresponding variable names
             RecipeIngredient.Ingredients newRecipes = new RecipeIngredient.Ingredients
             {
                 IngName = IngredientName,
@@ -194,6 +197,7 @@ namespace Part3
             string chosen = SelName.Text;
             bool recipeNameSelected = false;
 
+            //clear label since no user input required
             ViewRecDetails.Content = string.Empty;
             foreach(var addedRecName in newRecipes)
             {
@@ -282,8 +286,8 @@ namespace Part3
                     }
                     */
                 }
-
-                if(!recipeMatched)
+                //if no recipe name matched
+                if (!recipeMatched)
                 {
                     FilIngName.Content = $"No Recipe Name exists containing filtered Ingredient Name given";
                 }
@@ -337,7 +341,7 @@ namespace Part3
                     }
                     */
                 }
-                //
+                //if no recipe name matched
                 if (!recipeMatched)
                 {
                     FilFood.Content = $"No Recipe Name exists containing filtered Food Group";
@@ -348,7 +352,8 @@ namespace Part3
         //3) calories
         private void FilterCal_Click(object sender, RoutedEventArgs e)
         {
-            string filteredCals = FilCalories.Text;
+            //string filteredCals = FilCalories.Text;
+            int filteredCals = int.Parse(FilCalories.Text);
 
             if (string.IsNullOrEmpty(FilCalories.Text))
             {
@@ -387,7 +392,7 @@ namespace Part3
                     }
                     */
                 }
-
+                //if no recipe name matched
                 if (!recipeMatched)
                 {
                     FilCal.Content = $"No Recipe Name exists containing filtered Calories";
